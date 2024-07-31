@@ -1,8 +1,8 @@
-name: 2
+name: "name "
 on: issues
-  jobs:
-    job2:
-      runs-on: ubuntu-latest
-      steps:
-        name: Output
+jobs:
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output
         run: echo "${{ toJson(github.events) }}"
