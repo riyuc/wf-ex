@@ -1,8 +1,8 @@
-name: "name "
+name: "2"
 on: issues
 jobs:
   job2:
     runs-on: ubuntu-latest
     steps:
       - name: Output
-        run: echo "${{ toJson(github.events) }}"
+        run: echo "${{ toJSON(github.event) }}"
