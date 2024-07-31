@@ -1,40 +1,40 @@
 name: 1
 on: push
-  jobs:
-    lint:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v3
-        - name: Install dependencies
-          run: npm ci
-        - name: lint
-          run: npm run lint
-    test:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v3
-        - name: Install dependencies
-          run: npm ci
-        - name: test
-          run: npm run test
-    build:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v3
-        - name: Install dependencies
-          run: npm ci
-        - name: build
-          run: npm run build
-    deploy:
-      needs: [lint, test, build]
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v3
-        - name: Install dependencies
-          run: npm ci
-        - name: deploy
-          run: echo "Deploying"
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+      - name: lint
+        run: npm run lint
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+      - name: test
+        run: npm run test
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+      - name: build
+        run: npm run build
+  deploy:
+    needs: [lint, test, build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+      - name: deploy
+        run: echo "Deploying"
