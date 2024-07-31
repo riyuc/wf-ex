@@ -39,7 +39,7 @@ jobs:
     needs: build
     steps:
       - name: Get build artifacs
-        uses: actions/download-artifacts@v3   
+        uses: actions/download-artifact@v3   
         with: 
           name: dist-files
       - name: Output content
